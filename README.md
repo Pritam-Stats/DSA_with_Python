@@ -106,7 +106,7 @@ While this is primarily a personal collection, contributions are welcome! If you
 - [Personal Blog](https://###) (will add soon.)
 
 ## Contacts
-- [X (Twitter Profile)] (https://x.com/iPritamSaha09)
+- [X (Twitter Profile)](https://x.com/iPritamSaha09)
 
 ## License
 
