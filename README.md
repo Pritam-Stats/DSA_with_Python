@@ -1,9 +1,3 @@
-# DSA_with_Python
-## Solved structured and uploaded by - Pritam
-
-You can use this as a resource to solve DSA problems step by step and advance your skills. 
-This has been Pritam's journey of learning DSA with Python.
-
 # Data Structures and Algorithms Solutions
 
 Welcome to my collection of Data Structures and Algorithms (DSA) solutions! This repository serves as a comprehensive record of my daily problem-solving journey across various competitive programming platforms.
