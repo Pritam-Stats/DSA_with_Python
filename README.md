@@ -69,12 +69,12 @@ Space Complexity: O(?)
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/DSA-Solutions.git
+git clone https://github.com/pritam-stats/DSA_with_Python.git
 ```
 
 2. Navigate to the directory:
 ```bash
-cd DSA-Solutions
+cd DSA_with_Python
 ```
 
 3. Run any solution:
@@ -101,9 +101,12 @@ While this is primarily a personal collection, contributions are welcome! If you
 
 ## Resources
 
-- [LeetCode Profile](https://leetcode.com/yourusername)
-- [GeeksForGeeks Profile](https://auth.geeksforgeeks.org/user/yourusername)
-- [Personal Blog](https://yourblog.com) (If applicable)
+- [LeetCode Profile](https://leetcode.com/iPritam09)
+- [GeeksForGeeks Profile](https://auth.geeksforgeeks.org/user/ipritam09)
+- [Personal Blog](https://###) (will add soon.)
+
+## Contacts
+- [X (Twitter Profile)] (https://x.com/iPritamSaha09)
 
 ## License
 
@@ -111,5 +114,5 @@ This repository is licensed under the MIT License - see the [LICENSE](./LICENSE)
 
 ---
 
-*Last Updated: January 2025*  
-*Maintained by: [Your Name]*
+*Last Updated: January 14, 2025*  
+*Maintained by: [Pritam]*
