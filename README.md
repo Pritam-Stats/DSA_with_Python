@@ -5,13 +5,12 @@ Welcome to my collection of Data Structures and Algorithms (DSA) solutions! This
 ## Repository Structure
 
 ```
-DSA-Solutions/
+DSA_with_Python/
 ├── LeetCode/
 │   ├── Easy/
 │   ├── Medium/
 │   └── Hard/
 ├── GeeksForGeeks/
-│   ├── School/
 │   ├── Basic/
 │   ├── Easy/
 │   ├── Medium/
