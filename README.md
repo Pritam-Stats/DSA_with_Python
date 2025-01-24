@@ -7,15 +7,17 @@ Welcome to my collection of Data Structures and Algorithms (DSA) solutions! This
 ```
 DSA_with_Python/
 ├── LeetCode/
+│   ├── POTDs/
 │   ├── Easy/
 │   ├── Medium/
 │   └── Hard/
-├── GeeksForGeeks/
-│   ├── Basic/
+├── GFG/
+│   ├── POTDs/
 │   ├── Easy/
 │   ├── Medium/
 │   └── Hard/
 └── Others/
+    ├── Basic-Patterns/
     ├── HackerRank/
     ├── CodeChef/
     └── Codeforces/
@@ -34,6 +36,7 @@ DSA_with_Python/
   - [Medium Level](./GeeksForGeeks/Medium)
   - [Hard Level](./GeeksForGeeks/Hard)
 - [Other Platforms](./Others)
+  - [Patterns (Easy)](./Others/Basic-Patterns)
   - [HackerRank](./Others/HackerRank)
   - [CodeChef](./Others/CodeChef)
   - [Codeforces](./Others/Codeforces)
