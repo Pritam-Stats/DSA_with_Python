@@ -28,3 +28,16 @@ def generate_sandglass(n):
 
 result = generate_sandglass(3)
 print(result)
+
+# WITHOUT THE LIST - PRINTING THE PATTERN ONLY
+
+n = int(input("Enter the Integer: "))
+width = 2 * n - 1
+
+# Print the top half of the sandglass
+for i in range(width, 1, -2):
+    print(("*" * i).center(width))
+
+# Print the bottom half of the sandglass
+for j in range(1, width + 1, 2):
+    print(("*" * j).center(width))
