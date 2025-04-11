@@ -14,7 +14,6 @@ Also, both strings must have the same length.
 
 ## 🧪 Example
 
-```python
-s1 = "abcd"
-s2 = "cdab"
-# True, because rotating "abcd" two times gives "cdab"
+
+
+> This was the easiest problem I solved till date but the only thing this type of easy problem demands is the ability and experience to understand the problem statement, if we understand the problem summary what it's asking us to do in simplest terms we can solve as quickly as expected.
