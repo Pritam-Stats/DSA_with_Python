@@ -6,9 +6,16 @@ def isAnagram(s: str, t: str) -> bool:
     for c in s:
         freq[c] = freq.get(c, 0) + 1    #increasing the count by 1
 
-    for c in t:
-        freq[c] = freq.get(c, 0) - 1    #default is zero but whenever we finding the same key we are decreasing by 1
+    # for c in t:
+    #     freq[c] = freq.get(c, 0) - 1    #default is zero but whenever we finding the same key we are decreasing by 1
 
+
+    ## the following will also work in replace of the prev and its slightly better for the early exit
+    for c in t:
+        if c in s:
+            freq[c] -= 1
+        else:
+            return False
     #so if anagram we are supposed to left with all values as 0
 
     for v in freq.values():
