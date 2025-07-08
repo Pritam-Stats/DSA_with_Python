@@ -44,6 +44,7 @@ for each char in s:
 ![Code Visualizer](image.png)
 
 - Vizualization Link: (https://cscircles.cemc.uwaterloo.ca/visualize#mode=display)
+- Visualize code: [CodeChef](https://www.codechef.com/code-visualizer/8eb0b2d74c34fcdacbbc40e29e9c2200)
 - Will also give the answer why the join method is needed
 
 
