@@ -30,9 +30,3 @@ def myPow(x: float, n: int) -> float:
 print(myPow(9,3))
 
 
-        
-
-
-
-
-        
