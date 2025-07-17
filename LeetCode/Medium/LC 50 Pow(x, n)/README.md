@@ -1,7 +1,9 @@
 ## LeetCode 50 Power (x, n)
 - Problem Link: [50. Pow(x, n)](https://leetcode.com/problems/powx-n/)
 - **Date :** July 17, 2025 | 7:27 PM
-- *Tags*: #BitManipulation 
+- **Topic** : [[3.02 Bit Manipulation]] [[3.13 Fast Exponentiation]]
+- **Difficulty** : #Medium 
+
 ---
 The program to find $X^n$ runs in O(n) time. But with Bits we can find in O$(\log {n})$ time.
 
