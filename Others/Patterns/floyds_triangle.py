@@ -51,3 +51,14 @@ def floyds_triangle2(n: int) -> list:
 
 result2 = floyds_triangle(3)
 print(result2)
+
+
+def floydTri(n):
+    num = 1
+    for i in range(n+1):
+        for _ in range(i):
+            print(num, end=" ")
+            num += 1
+        print()
+
+floydTri(5)
