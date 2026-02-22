@@ -2,6 +2,12 @@
 
 Welcome to my collection of Data Structures and Algorithms (DSA) solutions! This repository serves as a comprehensive record of my daily problem-solving journey across various competitive programming platforms.
 
+
+
+## List of all Problems Done
+1. [LC 53 Max Sub-array sum](https://leetcode.com/problems/maximum-subarray/description/) | [Solution](/Structures/Arrays/06-MaxSubArraySum.py) - Kadane's Algorithm
+2. [LC 121 Buy and Sell Stocks](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/) | [Solution](/Structures/Arrays/MaxProfit.py)
+
 ## Repository Structure
 
 ```
