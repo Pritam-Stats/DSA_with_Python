@@ -23,13 +23,12 @@ Foundation work supports advanced data structures and algorithmic problem solvin
 ## Folder Structure
 
 
-[Foundation](/Foundation/)
-│
-├── [Patterns](/Foundation/Patterns/)
-├── basic_math/
-├── number_theory/
-├── bit_manipulation/
-└── recursion_basics/
+ - [Foundation](/Foundation/)
+   - [Patterns](/Foundation/Patterns/)
+   - [Mathematical-Problems](/Foundation/Mathematical-Problems/)
+   - number_theory/
+   - bit_manipulation/
+   - recursion_basics/
 
 
 ---
