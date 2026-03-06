@@ -100,342 +100,67 @@ Classical Problem : [LC 53 Max SubArray Sum](https://leetcode.com/problems/maxim
 
 ---
 
-# 2️⃣ Two Pointers
+## [Trapping Rainwater](/08-trapping-rainwater.py): 
+- have two arrays.
+  1. To store the left largest for each bar (will st from id 1)
+  2. To store the right largest for each bar (need to st from the right (id n-2) of the arr till id 0)
+- now for each bar what can be the stored water
+- stored water can't be negative
 
-## Core Idea
+#### Some detail notes
+- Problem Understanding
+> Water traps at each position i based on the minimum of the tallest bar to its left and right, minus `height[i]`. If no such boundaries exist, no water traps there. This needs precomputing max heights from both directions.
 
-Use two indices moving through the array with a maintained invariant.
+**Approach 1: Precompute Max Heights**
+Create two arrays: `left_max[i]` (max height from 0 to i) and `right_max[i]` (max height from i to end). Sum `min(left_max[i], right_max[i]) - height[i]` for all i
+> Time: O(n), Space: O(n).
+​
 
-## Types
+**Approach 2: Two Pointers (Optimal)**
+Use left and right pointers starting at ends, track `max_left` and `max_right`. Move the pointer with smaller height, adding trapped water based on its max.
+> Time: O(n), Space: O(1).
 
-* Opposite ends (`l`, `r`)
-* Same direction (slow-fast)
-* Partition pointers
+- Key intuition: Water at index `i` is limited by the **shorter** of the tallest bars on its left and right.
 
-## When to Use
-* [Reverse an Array Using Two Pointer O(1) Space](/Structures/Arrays/03-ReverseArray.py)
-* Sorted arrays
-* Pair sum problems
-* Removing duplicates
-* Reversals
-* Partitioning
+- Optimal method: Two-pointer technique with O(n) time and O(1) extra space. [youtube](https://www.youtube.com/watch?v=SHNMoumKE44)
 
-## Invariant Thinking
+- Initialize:
+  - `left = 0`, `right = n - 1`  
+  - `left_max = height[left]`, `right_max = height[right]`  
+  - `water = 0`. [purpletutor](https://purpletutor.com/trapping-rain-water/)
 
-Always define:
+- Invariant: At every step, the side with the smaller current height (or smaller max) determines the possible water level at that side. [neetcode](https://neetcode.io/solutions/trapping-rain-water)
 
-* What does left represent?
-* What does right represent?
-* What condition keeps loop valid?
+- Loop while `left < right`:
+  - If `height[left] <= height[right]`:
+    - If `height[left] >= left_max`: update `left_max = height[left]`.  
+    - Else: add `left_max - height[left]` to `water` (water trapped at `left`).  
+    - Move `left += 1`. [github](https://github.com/mdmzfzl/NeetCode-Solutions/blob/main/02_Two_Pointers/05_Trapping_Rain_Water/0042-trapping-rain-water.py)
+  - Else:
+    - If `height[right] >= right_max`: update `right_max = height[right]`.  
+    - Else: add `right_max - height[right]` to `water` (water trapped at `right`).  
+    - Move `right -= 1`. [purpletutor](https://purpletutor.com/trapping-rain-water/)
 
-## Example Pattern
+- Reason this is correct:  
+  - When `height[left] <= height[right]`, there is guaranteed to be some bar on the right at least as tall as `height[left]`, so the limiting factor for water at `left` is `left_max` only; right side cannot reduce it. [algo](https://algo.monster/liteproblems/42)
+  - Symmetric logic holds when `height[right] < height[left]`. [enjoyalgorithms](https://www.enjoyalgorithms.com/blog/trapping-rain-water/)
 
-If sorted:
+- Stopping condition: When `left >= right`, all positions have been processed, and `water` holds the total trapped water. [github](https://github.com/mdmzfzl/NeetCode-Solutions/blob/main/02_Two_Pointers/05_Trapping_Rain_Water/0042-trapping-rain-water.py)
 
-* sum < target → left++
-* sum > target → right--
+- Complexity:
+  - Time: Single pass over array → O(n). [youtube](https://www.youtube.com/watch?v=SHNMoumKE44)
+  - Space: Only a few scalar variables → O(1) extra space. [youtube](https://www.youtube.com/watch?v=SHNMoumKE44)
 
-Time: Usually O(n)
 
----
 
-# 3️⃣ Sliding Window
+### Sorting Algorithms
+- [Go here](/basic-sorting-algos/)
 
-Derived from two pointers.
 
-## Core Idea
 
-Maintain a window that expands and contracts based on a constraint.
 
-## Types
 
-### Fixed Size
 
-Window length = k
 
-### Variable Size
 
-Expand until invalid, then shrink.
-
-## When to Use
-
-* Subarray with condition
-* Longest/shortest substring problems
-* Maximum/minimum window problems
-
-## Invariant
-
-Window must always satisfy condition before updating result.
-
-## Common Mistakes
-
-* Forgetting to shrink properly
-* Not updating answer at correct time
-
-Time: O(n)
-
----
-
-# 4️⃣ Prefix Sum
-
-## Core Idea
-
-Precompute cumulative sums to answer range queries efficiently.
-
-```
-prefix[i] = prefix[i-1] + arr[i]
-```
-
-## When to Use
-
-* Range sum queries
-* Subarray sum equals K
-* Count subarrays
-
-## Advanced Insight
-
-If:
-prefix[j] - prefix[i] = K
-Then:
-prefix[j] = prefix[i] + K
-
-Use hashmap to store prefix frequencies.
-
-Time: O(n)
-
----
-
-# 5️⃣ Hashing with Arrays
-
-## Core Idea
-
-Trade space for time.
-
-## When to Use
-
-* Need O(1) lookup
-* Detect duplicates
-* Frequency counting
-* Complement search (Two Sum unsorted)
-
-## Pattern
-
-Store what you have seen so far.
-
-## Common Mistake
-
-Forgetting edge case when element equals target itself.
-
----
-
-# 6️⃣ Binary Search
-
-## Core Idea
-
-Exploit sorted order or monotonic condition.
-
-## Variants
-
-* Exact search
-* Lower bound
-* Upper bound
-* Search in rotated array
-* Binary search on answer
-
-## Key Principle
-
-Reduce search space by half each iteration.
-
-## Template Thinking
-
-Always define:
-
-* What condition makes answer valid?
-* What is the monotonic property?
-
-Time: O(log n)
-
----
-
-# 7️⃣ Sorting + Greedy
-
-## Core Idea
-
-Sort to simplify constraints, then make optimal local choices.
-
-## When to Use
-
-* Interval problems
-* Height minimization
-* Meeting room problems
-* Pairing problems
-
-## Key Thinking
-
-After sorting:
-
-* What greedy choice is safe?
-* Why does it not break future choices?
-
-Time: O(n log n)
-
----
-
-# 8️⃣ Kadane’s Algorithm
-
-## Problem Type
-
-Maximum subarray sum.
-
-## Core Idea
-
-Maintain running sum.
-If running sum becomes negative → reset.
-
-```
-current = max(arr[i], current + arr[i])
-```
-
-## Why It Works
-
-Negative prefix reduces future sum.
-
-Time: O(n)
-
-Variants:
-
-* Circular subarray
-* Minimum subarray
-
----
-
-# 9️⃣ Monotonic Stack
-
-## Core Idea
-
-Maintain stack in increasing or decreasing order.
-
-## When to Use
-
-* Next greater/smaller element
-* Histogram area
-* Stock span
-
-## Why It Works
-
-Each element is pushed and popped at most once.
-
-Time: O(n)
-
----
-
-# 🔟 Heap (Priority Queue)
-
-## Core Idea
-
-Maintain smallest/largest elements efficiently.
-
-## When to Use
-
-* Kth largest
-* Top K frequent
-* Sliding window maximum
-
-Time: O(n log k)
-
----
-
-# 1️⃣1️⃣ Bit Manipulation
-
-## Used For
-
-* Single number problems
-* XOR-based tricks
-* Mask filtering
-
-## Key Properties
-
-* a ^ a = 0
-* a ^ 0 = a
-
-Often reduces space complexity.
-
----
-
-# 1️⃣2️⃣ Divide & Conquer
-
-## Core Idea
-
-Break array into halves and solve recursively.
-
-## Algorithms
-
-* Merge sort
-* Quick sort
-* Counting inversions
-* Majority element (divide approach)
-
-Time: Usually O(n log n)
-
----
-
-# 1️⃣3️⃣ Dynamic Programming on Arrays
-
-Many DP problems operate on sequences.
-
-## Key Patterns
-
-* 1D DP
-* LIS
-* Subset sum
-* Partition problems
-
-## Key Step
-
-Define:
-
-* State
-* Transition
-* Base case
-
----
-
-# Common Array Mistakes
-
-* Off-by-one errors
-* Not handling empty input
-* Overflow in prefix sums
-* Incorrect binary search boundaries
-* Forgetting to reset variables
-
----
-
-# Mastery Order (Follow This Strictly)
-
-1. Traversal
-2. Two pointers
-3. Sliding window
-4. Prefix sum
-5. Hashing
-6. Binary search
-7. Kadane
-8. Sorting + Greedy
-9. Monotonic stack
-10. DP
-
----
-
-# Goal
-
-After mastering arrays, you should:
-
-* Instantly recognize subarray constraints
-* Identify monotonic properties
-* Apply correct technique within minutes
-* Solve medium problems confidently
-* Avoid repeated mistakes
-
-Arrays are the foundation of high-level problem solving.
-
----
 
