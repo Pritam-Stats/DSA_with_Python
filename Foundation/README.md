@@ -114,6 +114,55 @@ Understanding function call stack and problem decomposition.
 * Add short docstrings explaining logic.
 * Do not turn this folder into advanced DSA practice.
 
+
+
+
+## Count digits using logarithms $log_{10}$
+This little snippet is a classic programmer's trick. In short: **it calculates the number of digits in a positive integer.**
+[LC 1295](https://leetcode.com/problems/find-numbers-with-even-number-of-digits/) | [Code](/find-nums-with-even-digits.py)
+```python
+  class Solution:
+    def findNumbers(self, nums: List[int]) -> int:
+        cnt = 0
+        for num in nums:
+            if int(math.log10(num) + 1) % 2 == 0:
+                cnt += 1
+        return cnt
+  ```
+---
+
+### How it Works (The Logic)
+
+To understand why this works, we have to look at how logarithms relate to powers of 10:
+
+* **$\log_{10}(10) = 1$**
+* **$\log_{10}(100) = 2$**
+* **$\log_{10}(1000) = 3$**
+
+When you take the base-10 logarithm of a number, you are essentially finding out "10 to what power equals this number?"
+
+1. **`math.log10(num)`**: This finds the magnitude. For a number like $450$, the log is approximately $2.65$.
+2. **The "Invisible" Step**: Usually, this code is wrapped in a "floor" function or cast to an integer, like `int(math.log10(num))`. For $450$, this would turn $2.65$ into $2$.
+3. **`+ 1`**: Since our count started at $2$ (representing the hundreds place), adding $1$ gives us $3$—the correct number of digits in $450$.
+
+---
+
+### Comparison: Math vs. Strings
+
+Most beginners count digits by converting the number to text, but the math approach is often faster for the computer.
+
+| Method | Example Code | Why use it? |
+| --- | --- | --- |
+| **String Method** | `len(str(num))` | Easy to read; handles any number format. |
+| **Math Method** | `int(math.log10(num) + 1)` | **Performance.** It avoids allocating memory for a new string. |
+
+---
+
+### ⚠️ Two Important Notes
+
+* **The "Zero" Error:** This function will crash (throw a `ValueError`) if `num` is $0$, because the logarithm of zero is undefined.
+* **Negative Numbers:** This only works for positive integers. If you need to handle negatives, you’d use `math.log10(abs(num))`.
+If the input num is 11, the function will return:$$\log_{10}(11) + 1 \approx 2.041392685158225$$
 ---
 
 ## Role in Overall Preparation
