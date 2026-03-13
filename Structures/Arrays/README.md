@@ -1,4 +1,21 @@
-# Arrays
+- [1. Arrays](#1-arrays)
+- [2. Core Techniques in Arrays](#2-core-techniques-in-arrays)
+- [3. 1️⃣ Basic Traversal \& Simulation - Linear Search](#3-1️⃣-basic-traversal--simulation---linear-search)
+  - [3.1. Linear Search](#31-linear-search)
+  - [3.2. When to Use](#32-when-to-use)
+  - [3.3. Key Concepts](#33-key-concepts)
+  - [3.4. Common Mistakes](#34-common-mistakes)
+  - [3.5. Problems:](#35-problems)
+- [4. Binary Search](#4-binary-search)
+    - [4.0.1. Time:](#401-time)
+- [5. Kadane's Algorithm](#5-kadanes-algorithm)
+  - [5.1. Core use](#51-core-use)
+  - [5.2. Key Intuition:](#52-key-intuition)
+- [6. Trapping Rainwater:](#6-trapping-rainwater)
+      - [6.0.0.1. Some detail notes](#6001-some-detail-notes)
+    - [6.0.1. Sorting Algorithms](#601-sorting-algorithms)
+
+# 1. Arrays
 
 Arrays store elements in contiguous memory and allow constant-time indexing.
 
@@ -15,15 +32,15 @@ Mastering arrays builds the foundation for advanced DSA.
 
 ---
 
-# Core Techniques in Arrays
+# 2. Core Techniques in Arrays
 
 Below are the major techniques used in array problems, with detailed conceptual notes.
 
 ---
 
-# 1️⃣ Basic Traversal & Simulation - Linear Search
+# 3. 1️⃣ Basic Traversal & Simulation - Linear Search
 
-## Linear Search
+## 3.1. Linear Search
 - Simple Algo to search for a target
 - Can be applied to any array sorted or unsorted
 - Travel the array one by one and returns for the first target.
@@ -41,31 +58,31 @@ Below are the major techniques used in array problems, with detailed conceptual 
         print(linearSearch(arr, 10))    #4
         print(linearSearch(arr, 0))     #-1
     ```
-## When to Use
+## 3.2. When to Use
 
 * Simple processing
 * Counting
 * Rearrangement
 * Brute-force baseline
 
-## Key Concepts
+## 3.3. Key Concepts
 
 * Index control
 * Boundary handling
 * In-place updates
 * Multiple passes
 
-## Common Mistakes
+## 3.4. Common Mistakes
 
 * Off-by-one errors
 * Incorrect loop ranges
 * Modifying array while iterating incorrectly
 
-## Problems:
+## 3.5. Problems:
 - [Print All Possible SubArrays](/Structures/Arrays/05-PrintAllSubArrays.py) What's the total number of possible sub-arrays?
 - [Reverse Array in Normal way - Without restriction](/Structures/Arrays/03-ReverseArray.py)
 ---
-# Binary Search
+# 4. Binary Search
 - **For Sorted Array**
 - Take two idx st = 0 end = n-1
 - Find the mid (int)
@@ -84,30 +101,30 @@ Below are the major techniques used in array problems, with detailed conceptual 
 - return -1 at the outside of the loop
 
 - [BINARY SEARCH CODE](/Structures/Arrays/04-BinarySearch.py)
-### Time:
+### 4.0.1. Time:
 - At every operation the number of arr is getting 1/2
 - so for n iteration, we will have (1/2)^n this is the formula of log(N)
 - O(logN) - so for a array size of n, we need to have logN number of iteration at max
 ---
 
-# Kadane's Algorithm
-## Core use
+# 5. Kadane's Algorithm
+## 5.1. Core use
 Classical Problem : [LC 53 Max SubArray Sum](https://leetcode.com/problems/maximum-subarray/) | [Solution](/Structures/Arrays/06-MaxSubArraySum.py)
 
-## Key Intuition:
+## 5.2. Key Intuition:
 - Keep track of maxsum and currsum. 
 - If currsum becomes negative re-assign it to 0.
 
 ---
 
-## [Trapping Rainwater](/08-trapping-rainwater.py): 
+# 6. [Trapping Rainwater](/08-trapping-rainwater.py): 
 - have two arrays.
   1. To store the left largest for each bar (will st from id 1)
   2. To store the right largest for each bar (need to st from the right (id n-2) of the arr till id 0)
 - now for each bar what can be the stored water
 - stored water can't be negative
 
-#### Some detail notes
+#### 6.0.0.1. Some detail notes
 - Problem Understanding
 > Water traps at each position i based on the minimum of the tallest bar to its left and right, minus `height[i]`. If no such boundaries exist, no water traps there. This needs precomputing max heights from both directions.
 
@@ -153,7 +170,7 @@ Use left and right pointers starting at ends, track `max_left` and `max_right`. 
 
 
 
-### Sorting Algorithms
+### 6.0.1. Sorting Algorithms
 - [Go here](/basic-sorting-algos/)
 
 
