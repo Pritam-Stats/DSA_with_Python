@@ -26,6 +26,14 @@
     - [7.3.1. 1657 Close Strings – Key conditions](#731-1657-close-strings--key-conditions)
     - [7.3.2. Standard Python template](#732-standard-python-template)
     - [7.3.3. Complexity](#733-complexity)
+- [8. LC 151 and 09 reverse string with dots gfg](#8-lc-151-and-09-reverse-string-with-dots-gfg)
+  - [8.1. Intuition](#81-intuition)
+  - [8.2. Approach 1](#82-approach-1)
+  - [8.3. Approach 2 - Better (pythonic)](#83-approach-2---better-pythonic)
+  - [8.4. Complexity](#84-complexity)
+  - [8.5. Edge Case :](#85-edge-case-)
+  - [8.6. Code 1](#86-code-1)
+  - [8.7. Code 2 - Signle Line](#87-code-2---signle-line)
 
 <h1>Problems on Strings</h1>
 
@@ -348,4 +356,74 @@ def closeStrings(word1: str, word2: str) -> bool:
 
 When you get an intuition like “compare count dictionaries”, try to **name the invariant** (“sorted frequency multiset does not change under operations”) and then argue necessity and sufficiency. That’s the step that turns a gut feeling into a proof.
 
+---
 
+
+
+# 8. LC 151 and 09 reverse string with dots gfg
+[code - LC](/lc-151-reverseWords.py)
+[Code - GFG](/09-reverseStr-dots-gfg.py)
+both are similar problem.
+[Solution Article on Leetcode](https://leetcode.com/problems/reverse-words-in-a-string/solutions/7675751/reverse-words-in-a-string-clean-python-s-f88j/)
+## 8.1. Intuition
+<!-- Describe your first thoughts on how to solve this problem. -->
+The problem asks us to reverse the **order of words**, not the characters inside them.
+A simple way to think about it:
+- First, extract all the words from the string
+- Then reverse their order
+- Finally, join them back into a sentence
+## 8.2. Approach 1
+<!-- Describe your approach to solving the problem. -->
+1. split the string by " " one space so that it will convert the sentence to a list.
+2. run a backward for loop for the len of the list
+3. check if it's a whitespace; if a space skip else add to a new `ans` array.
+4. return the `ans` array by joining the list item by a space using the `join` method of string
+
+## 8.3. Approach 2 - Better (pythonic)
+
+1. Using `split()` automatically removes extra spaces
+
+    - Example: " hello world " → ["hello", "world"]
+2. Reverse the list of words
+
+    - Use slicing [::-1] for a clean reversal
+3. Join the words with a single space
+
+## 8.4. Complexity
+- Time complexity: O$(n)$
+<!-- Add your time complexity here, e.g. $$O(n)$$ -->
+
+- Space complexity: O($n)$
+<!-- Add your space complexity here, e.g. $$O(n)$$ -->
+
+## 8.5. Edge Case :
+- Handling the multiple whitespaces.
+
+## 8.6. Code 1
+```python3 []
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        '''
+            Author: Pritam
+        '''
+        s = s.split(" ")
+        ans = []
+        n = len(s)
+        for i in range(n-1, -1, -1):
+            if s[i] != "":
+                ans.append(s[i])
+        return " ".join(ans)
+        
+```
+
+## 8.7. Code 2 - Signle Line
+
+```python3 []
+class Solution:
+    def reverseWords(self, s: str) -> str:
+        '''
+            Author: Pritam
+        '''
+        return " ".join(s.split()[::-1])
+        
+```
