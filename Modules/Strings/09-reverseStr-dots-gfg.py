@@ -3,11 +3,11 @@
 ''' 
 '''  
 Problem: https://www.geeksforgeeks.org/problems/reverse-words-in-a-given-string5459/1
-Technique: 
+Technique: traditional loop
 Intuition: split
 Mistake: how to handle multiple dots
-Time: 
-Space: 
+Time: O(n)
+Space: O(n)
 ''' 
 
 
