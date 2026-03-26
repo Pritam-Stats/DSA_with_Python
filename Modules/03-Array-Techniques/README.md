@@ -245,3 +245,157 @@ Brute Force → Prefix Sum → Sliding Window ✅
 
 ---
 
+
+
+
+# 985. Sum of Even Numbers After Queries
+
+## 1. Problem Summary
+
+Given an array `nums` and queries `[val, index]`, for each query:
+
+* Update: `nums[index] += val`
+* Return the sum of even numbers after each update
+
+---
+
+## 2. Constraints Insight
+
+* Only **one element changes per query**
+* Recomputing full sum each time → inefficient
+
+---
+
+## 3. Naive Approach
+
+### Idea
+
+For each query:
+
+* Update array
+* Loop through entire array and sum even numbers
+
+### Complexity
+
+* Time: **O(n * q)** → TLE
+* Space: O(1)
+
+---
+
+## 4. Optimized Approach (Key Idea)
+
+Maintain a **running sum of even numbers**.
+
+Instead of recomputing:
+
+> Adjust only the affected element.
+
+---
+
+## 5. Algorithm
+
+1. Initialize:
+
+   ```python
+   evenSum = sum(x for x in nums if x % 2 == 0)
+   ```
+
+2. For each query `(val, i)`:
+
+   * If `nums[i]` is even → remove it from sum
+   * Update: `nums[i] += val`
+   * If updated value is even → add it to sum
+   * Append result
+
+---
+
+## 6. Code
+
+```python
+class Solution:
+    def sumEvenAfterQueries(self, nums, queries):
+        evenSum = sum(x for x in nums if x % 2 == 0)
+        ans = []
+
+        for val, i in queries:
+            if nums[i] % 2 == 0:
+                evenSum -= nums[i]
+
+            nums[i] += val
+
+            if nums[i] % 2 == 0:
+                evenSum += nums[i]
+
+            ans.append(evenSum)
+
+        return ans
+```
+
+---
+
+## 7. State Transition Cases
+
+| Before | After | Action                |
+| ------ | ----- | --------------------- |
+| Even   | Even  | subtract old, add new |
+| Even   | Odd   | subtract old          |
+| Odd    | Even  | add new               |
+| Odd    | Odd   | no change             |
+
+---
+
+## 8. Edge Cases
+
+* Negative numbers → still valid
+* Zero is even
+* Must update `nums[i]` (common bug)
+
+---
+
+## 9. Complexity
+
+* Time: **O(n + q)**
+* Space: **O(1)**
+
+---
+
+## 10. Pattern Recognition
+
+This is a classic:
+
+> **Incremental Update Pattern**
+
+Use when:
+
+* Only small part of data changes
+* Global value depends on entire structure
+
+---
+
+## 11. Generalization
+
+Same idea applies to:
+
+* Prefix sum updates
+* Hashmap frequency tracking
+* Sliding window problems
+* Real-time aggregation systems
+
+---
+
+## 12. Key Takeaway
+
+> Never recompute global state if only one element changes.
+
+Update it incrementally.
+
+---
+
+## 13. Feynman Explanation
+
+Instead of recalculating everything:
+
+* Remove old value
+* Add new value
+
+Like updating total money after replacing one note.
