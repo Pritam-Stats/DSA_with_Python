@@ -51,7 +51,7 @@ class Solution:
 
         ans = []
 
-        currMax = 0 ## this is the main approach this time
+        currMax = 0 
 
         ## first window
         currMax = max(arr[:k])  #arr[:k] -> first k elements of arr. O(k) tc
@@ -60,18 +60,12 @@ class Solution:
 
         ## now
         for i in range(k, n):
-            # we check the new value that's coming into the window
             if arr[i] > currMax:
-                currMax = arr[i]        # it's simple, see, if the new incoming val is greater the prev MAX, then we can say the new is already the max
+                currMax = arr[i]        
 
             else:
-                # what's the second condn?
-                #suppose the outgoing val was the prev max, then we have to calculate from scratch?? here comes the worst case scene
                 if currMax == arr[i-k]:
-                    currMax = max(arr[i-k + 1 : i+1]) #after i-k values O(k) TC
-            
-            ##another condn, what happen at the else case means, neither incoming or outgoing val is the max
-            # so currMax is somewhere in between, so remains unchanged for the window.
+                    currMax = max(arr[i-k + 1 : i+1]) 
 
             #O(1)
 
