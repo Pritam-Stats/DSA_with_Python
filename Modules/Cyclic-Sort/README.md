@@ -68,7 +68,7 @@ Time & Space
 - Space: O(1)
 
 Reason:
-- Each element is swapped at most once into correct position
+- Each element is swapped at most once into correct positionhttps://leetcode.com/problems/find-missing-and-repeated-values/
 
 ---
 
@@ -123,4 +123,9 @@ Key Takeaways
 - “Keep swapping until correct element is placed”
 - Duplicate case is handled by:
 - nums[i] == nums[correct] → move forward
+
+
+---
+
+# Problem : [2965. Find Missing and Repeated Values](https://leetcode.com/problems/find-missing-and-repeated-values/) | [Solution](./lc-2965-find-missing-and-repeat-2d.py)
 
