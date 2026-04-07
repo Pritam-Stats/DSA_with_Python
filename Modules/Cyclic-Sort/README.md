@@ -132,3 +132,64 @@ Key Takeaways
 
 # Problem:[LC-448-Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/description/)
 
+
+
+
+# Find Duplicates — Index Marking (Negative Marking)
+Problem: [LC-442](https://leetcode.com/problems/find-all-duplicates-in-an-array/) | [Code](./lc-442)
+
+---
+
+## Preconditions
+- nums[i] ∈ [1, n]
+- Modification of array is allowed
+
+---
+
+## Core Idea
+- value v → index (v - 1)
+- Use array index as a visited flag using sign
+
+---
+
+## Logic
+- Traverse the array
+- For each element:
+  - v = abs(nums[i])
+  - idx = v - 1
+- If nums[idx] < 0
+  - duplicate found → add v
+- Else
+  - mark visited → nums[idx] *= -1
+
+---
+
+## Invariant
+- nums[v - 1] < 0 ⇒ value v has been seen before
+
+---
+
+## Why it works
+- Same value always maps to same index
+- First visit → mark negative
+- Second visit → already negative → duplicate
+
+---
+
+## Complexity
+- Time: O(n)
+- Space: O(1)
+
+---
+
+## Constraints
+- Values must be in range [1, n]
+- Will fail if:
+  - values are out of range
+  - array cannot be modified
+
+---
+
+## Mental Model
+- Array acts as a visited map
+- Sign represents state (visited / not visited)        
