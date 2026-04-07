@@ -129,3 +129,6 @@ Key Takeaways
 
 # Problem : [2965. Find Missing and Repeated Values](https://leetcode.com/problems/find-missing-and-repeated-values/) | [Solution](./lc-2965-find-missing-and-repeat-2d.py)
 
+
+# Problem:[LC-448-Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/description/)
+
