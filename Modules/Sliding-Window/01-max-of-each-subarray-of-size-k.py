@@ -78,3 +78,9 @@ print(s.maxOfSubarrays([1, 2, 3, 1, 4, 5, 2, 3, 6], k = 3))
 
 print(s.maxOfSubarraysOptimal([1, 2, 3, 1, 4, 5, 2, 3, 6], k = 3))
 
+'''
+Problem: https://leetcode.com/problems/sliding-window-maximum/description/
+Mistake: The above solution is tle as well
+needs perfect O(n)
+'''
+
