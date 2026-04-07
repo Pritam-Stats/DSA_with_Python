@@ -192,4 +192,14 @@ Problem: [LC-442](https://leetcode.com/problems/find-all-duplicates-in-an-array/
 
 ## Mental Model
 - Array acts as a visited map
-- Sign represents state (visited / not visited)        
+- Sign represents state (visited / not visited)       
+
+
+
+
+
+
+# LC 41 - Find Missing Postive
+Problem: [LC 41](https://leetcode.com/problems/first-missing-positive/submissions/1971411912/) | [Code](./lc-41-find-missing-positive.py)
+
+ 
