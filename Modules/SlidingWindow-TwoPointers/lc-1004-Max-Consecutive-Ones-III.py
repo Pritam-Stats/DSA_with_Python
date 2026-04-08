@@ -3,7 +3,7 @@
 '''
 
 class Solution:
-    def longestOnes(self, nums: list[int], k: int) -> int:
+    def longestOnesBrue(self, nums: list[int], k: int) -> int:
 
         ##brute
         maxLen = 0
@@ -19,9 +19,12 @@ class Solution:
                 else:
                     break
         return maxLen
+    '''
+        TC: O(n2) -> Tle
+    '''
 
 
-    def longestOnesOptimal(self, nums: list[int], k: int) -> int:
+    def longestOnesBetter(self, nums: list[int], k: int) -> int:
         '''
             Two pointer + sliding window
         '''
@@ -42,4 +45,10 @@ class Solution:
                 maxLen = max(maxLen, r-l+1)
             r += 1
         return maxLen
+    '''
+        TC: O(2n) theoretically
+    '''
+
+    def longestOnesOptimal(self, nums: list[int], k: int) -> int:
+        pass
         
