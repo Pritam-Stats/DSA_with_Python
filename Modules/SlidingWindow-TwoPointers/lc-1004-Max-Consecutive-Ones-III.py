@@ -37,7 +37,7 @@ class Solution:
             if nums[r] == 0:
                 zeroCount += 1
 
-            while zeroCount > k:
+            while zeroCount > k:    #here we running this loop till we get zeroCount < k
                 if nums[l] == 0:
                     zeroCount -= 1
                 l += 1
@@ -50,5 +50,26 @@ class Solution:
     '''
 
     def longestOnesOptimal(self, nums: list[int], k: int) -> int:
-        pass
+        n = len(nums)
+        l, r = 0, 0
+        zeroCount, maxLen = 0, 0
+
+        while r < n:
+            if nums[r] == 0:
+                zeroCount += 1
+
+            if zeroCount > k:   ## here we are keep running and and changing the l but maxLen won't get updated so while doesn't need here actually
+                if nums[l] == 0:
+                    zeroCount -= 1
+                l += 1
+
+            if zeroCount <= k:
+                maxLen = max(maxLen, r-l+1)
+
+            r += 1
+        return maxLen
+    '''
+        TC: O(N)
+    '''
+
         
