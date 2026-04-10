@@ -1,5 +1,5 @@
 # Maximum Average Subarray I (LC 643)
-
+[Code](/LC-643-Max-Avg-SubArray-Solutions/)
 - Problem: Fixed size subarray (k), maximize average ⇒ maximize sum
 
 ---
