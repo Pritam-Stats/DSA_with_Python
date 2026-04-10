@@ -1,5 +1,5 @@
 # Maximum Average Subarray I (LC 643)
-[Code](/LC-643-Max-Avg-SubArray-Solutions/)
+[Code](./LC-643-Max-Avg-SubArray-Solutions/)
 - Problem: Fixed size subarray (k), maximize average ⇒ maximize sum
 
 ---
@@ -95,7 +95,7 @@
 ---
 
 # LC 424 — [Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/)
-[Code](/lc-424-longest-repeating-char-replacement.py)
+[Code](./lc-424-longest-repeating-char-replacement.py)
 ### Goal
 
 - Longest substring where ≤ k replacements make all chars same
