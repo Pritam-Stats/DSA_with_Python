@@ -23,3 +23,6 @@ class Solution:
             maxLen = max(maxLen, right - left + 1)
             right += 1
         return maxLen
+    # O(2n), O(26)
+
+    
