@@ -16,3 +16,6 @@
 
 # LC 315. [count-of-smaller-numbers-after-self](https://leetcode.com/problems/count-of-smaller-numbers-after-self/description/)
 - [Code](./lc-315-count-of-smaller-numbers-after-self.py)
+
+# LC 81. [Search in Rotated Sorted Array II](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/description/)
+- [Code](./lc-81-Search-in-Rotated-Sorted-array-2.py)
