@@ -17,9 +17,11 @@ class Solution:
         return -1
     
     def search2(self, nums: list[int], target: int) -> int:
-        n = len(nums)
-
-        return bisect_left(nums, target)
+        idx = bisect_left(nums, target)
+        if idx < len(nums) and nums[idx] == target:
+            return idx
+        else:
+            return -1
     
 s = Solution()
 print(s.search([1,2,3,4,4,4,5], 4))
