@@ -8,6 +8,7 @@
 - [8. LC 436. Find-Right-Interval](#8-lc-436-find-right-interval)
 - [9. LC 315. count-of-smaller-numbers-after-self](#9-lc-315-count-of-smaller-numbers-after-self)
 - [10. LC 81. Search in Rotated Sorted Array II](#10-lc-81-search-in-rotated-sorted-array-ii)
+- [11. LC 1365. How Many Numbers Are Smaller Than the Current Number](#11-lc-1365-how-many-numbers-are-smaller-than-the-current-number)
 ---
 
 # 1. First and Last Occ of target in a sorted array
@@ -49,6 +50,9 @@
 # 10. LC 81. [Search in Rotated Sorted Array II](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/description/)
 - [Code](./lc-81-Search-in-Rotated-Sorted-array-2.py)
 
+# 11. LC 1365. [How Many Numbers Are Smaller Than the Current Number](https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/description/)
+- [Code](./lc-1365-how-many-numbers-are-smaller-than-the-current-number.py)
 
 ---
+
 - Link to Notes page: https://ipritam.notion.site/Binary-Search-solutions-3423934632d28188a5bef578b596f222
