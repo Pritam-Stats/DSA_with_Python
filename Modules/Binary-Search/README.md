@@ -9,6 +9,7 @@
 - [9. LC 315. count-of-smaller-numbers-after-self](#9-lc-315-count-of-smaller-numbers-after-self)
 - [10. LC 81. Search in Rotated Sorted Array II](#10-lc-81-search-in-rotated-sorted-array-ii)
 - [11. LC 1365. How Many Numbers Are Smaller Than the Current Number](#11-lc-1365-how-many-numbers-are-smaller-than-the-current-number)
+- [12. LC 162. Find Peak Element](#12-lc-162-find-peak-element)
 ---
 
 # 1. First and Last Occ of target in a sorted array
@@ -52,6 +53,9 @@
 
 # 11. LC 1365. [How Many Numbers Are Smaller Than the Current Number](https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/description/)
 - [Code](./lc-1365-how-many-numbers-are-smaller-than-the-current-number.py)
+
+# 12. LC 162. [Find Peak Element](https://leetcode.com/problems/find-peak-element/)
+- [Code](./lc-162-Find-Peak-Element.py)
 
 ---
 
