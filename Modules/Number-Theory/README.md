@@ -7,3 +7,10 @@ Notes Link: [Notion Site - notion.so/ipritam/number-theory-basics](https://www.n
 - TC: On average we will get O$n * \sqrt{n}$
 - Better: O$(n * \log{n})$
 
+# Sieve of Eratosthenes
+1. [Count Factors Of all the numbers](./count-factors-of-all-1-to-n.py)
+2. [Print All primes numbers](./print-all-primes-sieve.py)
+
+TC: $$O(n * \log{\log{n}})$$
+
+## Derivation of Complexity Part
