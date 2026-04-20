@@ -17,7 +17,7 @@ class primeFactors():
 
 
 # -------------------------------------------------------------------------------
-    def better(self, n:int):
+    def root_n(self, n:int):
         ans = []
         d = 2
         while d*d <= n:
@@ -25,9 +25,10 @@ class primeFactors():
                 while n%d == 0:
                     ans.append(d)
                     n //= d
-            if n > 1:
-                ans.append(n)
             d += 1
+        
+        if n > 1:
+            ans.append(n)
         print(*ans)
 
 # -------------------------------------------------------------------------------
@@ -45,6 +46,6 @@ class primeFactors():
 
 p = primeFactors()
 
-p.brute(14)
-p.better(14)
+p.brute(30)
+p.root_n(30)
 p.spf(20)
