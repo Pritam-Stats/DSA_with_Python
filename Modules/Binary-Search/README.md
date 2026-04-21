@@ -10,6 +10,9 @@
 - [10. LC 81. Search in Rotated Sorted Array II](#10-lc-81-search-in-rotated-sorted-array-ii)
 - [11. LC 1365. How Many Numbers Are Smaller Than the Current Number](#11-lc-1365-how-many-numbers-are-smaller-than-the-current-number)
 - [12. LC 162. Find Peak Element](#12-lc-162-find-peak-element)
+- [13. Find First True](#13-find-first-true)
+- [14. Find Last True](#14-find-last-true)
+- [15. Aggressive Cows](#15-aggressive-cows)
 ---
 
 # 1. First and Last Occ of target in a sorted array
@@ -59,4 +62,21 @@
 
 ---
 
+# 13. Find First True
+Given a string with trailing False and the Trues at the ends, the string is sorted in boolean order. Consider F as 0 and T as 1, find the first index of True. `s = "FFFFFTTTTTTT" ` ans- 5
+
+- [Code](./04-find-first-true.py)
+
+
+# 14. Find Last True
+Given a string with trailing Trues and the False at the ends, the string is sorted in boolean order. Consider F as 0 and T as 1, find the first index of True. `s= "TTTTTTFFFFFF"`  ANS- 6
+
+- [Code](./05-find-last-true.py)
+
+# 15. Aggressive Cows
+- CF Group problem. Good Problem on BS
+- Pattern is maximum of the possible minimum distance
+
 - Link to Notes page: https://ipritam.notion.site/Binary-Search-solutions-3423934632d28188a5bef578b596f222
+
+- More Problems - https://github.com/Pritam-Stats/100xSchool/tree/main/100xDSA/w12-Binary-Search
