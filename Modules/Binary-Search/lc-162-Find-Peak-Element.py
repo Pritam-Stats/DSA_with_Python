@@ -5,6 +5,25 @@
 Key Intuition: if we are declining in a mountain means we already had a peak in our left,
 if uphill, we will get a peak.
 '''
+class Solution:
+    ## NeetCode
+    def findPeakElement(self, nums: list[int]) -> int:
+        n = len(nums)
+        l, r = 0, n-1
+
+        while l<=r:
+            m = l + ((r-l)//2)                #(l+r)//2 #another way to calculate mid which ensures out of bound
+            # check if the left neighbour is greater
+            if m > 0 and nums[m] < nums[m-1]:
+                r = m-1
+            elif m < n-1 and nums[m] < nums[m+1]:
+                l = m+1
+            else:
+                return m
+
+
+
+#--------------------------------------------------------------------------
 
 class Solution:
 
