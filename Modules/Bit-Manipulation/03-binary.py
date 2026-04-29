@@ -15,4 +15,18 @@ def binary(n):
     print("0b"+"".join(ans))
 
 binary(4)
+
+
+def binary_bit(N:int):
+    def checkIthBit(i):
+        mask = 1 << i
+        return (N & mask)
+    ans = ["0b"]
+    for i in range(30, -1, -1):
+        if checkIthBit(i) == 0:
+            ans.append(str(0))
+        else:
+            ans.append(str(1))
+    print(''.join(ans))
 print(bin(4))
+binary_bit(4)
