@@ -1,3 +1,173 @@
+Quick Revision Notes
+
+
+1. Mathematics
+
+Modular Arithmetic
+
+* (a + b) % m = ((a % m) + (b % m)) % m
+* (a - b) % m = ((a % m) - (b % m) + m) % m
+* (a * b) % m = ((a % m) * (b % m)) % m
+* Fast exponentiation: O(log n)
+
+def mod_exp(a, b, m):
+    res = 1
+    a %= m
+    while b:
+        if b & 1:
+            res = (res * a) % m
+        a = (a * a) % m
+        b >>= 1
+    return res
+
+Modular Inverse
+
+* Fermat (m prime): a^(m-2) % m
+
+GCD / LCM
+
+* gcd(a, b)
+* lcm(a, b) = (a * b) // gcd(a, b)
+
+Prime Numbers
+
+* Sieve: O(n log log n)
+* Prime factorization: O(sqrt(n))
+
+⸻
+
+2. Bit Manipulation
+
+* Check power of 2: n & (n-1) == 0
+* Lowest set bit: n & -n
+* Count set bits: builtin or loop
+* XOR properties:
+    * a ^ a = 0
+    * a ^ 0 = a
+
+⸻
+
+3. Arrays & Prefix Sum
+
+* Prefix sum: O(n)
+* Range sum: prefix[r] - prefix[l-1]
+
+⸻
+
+4. Sliding Window / Two Pointer
+
+* Fixed window: O(n)
+* Variable window: expand + shrink
+
+⸻
+
+5. Binary Search
+
+* Condition-based search
+* Mid = l + (r - l) // 2
+* Time: O(log n)
+
+⸻
+
+6. Sorting
+
+* Built-in: O(n log n)
+* Custom comparator / key
+
+⸻
+
+7. Recursion & Backtracking
+
+* Base case + choice + backtrack
+
+⸻
+
+8. Dynamic Programming
+
+* Top-down (memoization)
+* Bottom-up (tabulation)
+* State definition is key
+
+Common patterns:
+
+* Knapsack
+* LIS
+* LCS
+
+⸻
+
+9. Graphs
+
+BFS
+
+* Shortest path (unweighted)
+* Queue
+
+DFS
+
+* Components, cycles
+
+Dijkstra
+
+* Weighted shortest path
+* Priority queue
+
+Union Find (DSU)
+
+* Path compression + union by rank
+
+⸻
+
+10. Trees
+
+* DFS traversal: inorder, preorder, postorder
+* Height, diameter
+
+⸻
+
+11. Strings
+
+* KMP: pattern matching O(n)
+* Z-algorithm
+
+⸻
+
+12. Complexity Cheatsheet
+
+* O(1): constant
+* O(log n): binary search
+* O(n): linear scan
+* O(n log n): sorting
+* O(n^2): nested loops
+
+⸻
+
+13. STL / Python Builtins
+
+* heapq (priority queue)
+* bisect (binary search)
+* collections (Counter, deque)
+
+⸻
+
+14. Common Tricks
+
+* Coordinate compression
+* Meet in the middle
+* Greedy choice property
+
+⸻
+
+---
+
+
+
+
+
+
+
+
+---
 
 # Data Structures
 
