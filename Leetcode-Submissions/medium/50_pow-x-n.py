@@ -14,18 +14,32 @@ from typing import List, Optional, Dict, Tuple, Set
 
 class Solution:
     def myPow(self, x: float, n: int) -> float:
-        if n == 0:
-            return 1.0
-        if n < 0:
-            x = 1/x
-            n = abs(n)
+        # n can be negative
+
+        if x == 1 or n ==0:
+            return 1
+        if x == 0:
+            return 0
+        if n == 1:
+            return x
         
-        res = self.myPow(x, n//2)   ##half of the power
-        if n&1 == 0:
-            res = res*res
-        else:
-            res = res*res*x ##odd power
-        return res
+        if n < 0:
+            n = abs(n)
+            x = 1/x
+        
+        ans = 1
+        while n:
+            if n%2 == 0:
+                #even power
+                x *= x
+            else:
+                ans *= x
+                x *= x
+            n = n>>1
+        return ans
+
+## TC: O(log2 n)
+## SC: O(1)
         
 # @lc code=end
 
